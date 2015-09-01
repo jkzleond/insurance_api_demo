@@ -1,0 +1,1168 @@
+<div data-role="page" id="insure_process_page">
+	<div data-role="header">
+		<h1>投保流程</h1>
+	</div>
+	<div role="main" class="ui-content">
+		<div class="mod1">
+			<div class="insure-base-info-step1">
+				<h4 class="ui-bar ui-bar-a">基本信息</h4>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>是否新车未上牌:</legend>
+						<input type="radio" name="newvehicleflag" id="newvehicleflag_yes" value="1">
+						<label for="newvehicleflag_yes">是</label>
+						<input type="radio" checked="checked" name="newvehicleflag" id="newvehicleflag_no" value="0">
+						<label for="newvehicleflag_no">否</label>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>是否外地车:</legend>
+						<input type="radio" name="ecdemicflag" id="ecdemicflag_yes" value="1">
+						<label for="ecdemicflag_yes">是</label>
+						<input type="radio" checked="checked" name="ecdemicflag" id="ecdemicflag_no" value="0">
+						<label for="ecdemicflag_no">否</label>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>是否过户车:</legend>
+						<input type="radio" name="transferflag" id="transferflag_yes" value="1">
+						<label for="transferflag_yes">是</label>
+						<input type="radio" checked="checked" name="transferflag" id="transferflag_no" value="0">
+						<label for="transferflag_no">否</label>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>选择产品:</legend>
+						<input type="radio" checked="checked" name="ctTemp.ctQuoteMain.productCode" id="ctTemp.ctQuoteMain.productCode0">
+						<label for="ctTemp.ctQuoteMain.productCode0">传统产品</label>
+						<input type="radio" name="ctTemp.ctQuoteMain.productCode" id="ctTemp.ctQuoteMain.productCode1">
+						<label for="ctTemp.ctQuoteMain.productCode1">电销产品</label>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<label for="ctTemp.ctQuoteMain.businessSource">业务来源:</label>
+					<select name="ctTemp.ctQuoteMain.businessSource" id="ctTemp.ctQuoteMain.businessSource"></select>
+				</div>
+				<div class="ui-field-contain">
+					<label for="ctTemp.ctQuoteMain.agentCode">代理人/中介机构:</label>
+					<select name="ctTemp.ctQuoteMain.agentCode" id="ctTemp.ctQuoteMain.agentCode">
+						<option value="">请选择</option>
+					</select>
+				</div>
+				<div class="ui-field-contain">
+					<label for="ctTemp.ctQuoteMain.ctCarinfos[0].licenseNo">号牌号码:</label>
+					<input name="ctTemp.ctQuoteMain.ctCarinfos[0].licenseNo" id="ctTemp.ctQuoteMain.ctCarinfos[0].licenseNo">
+				</div>
+				<button class="goto-base-info-step2-btn">下一步</button>
+			</div>
+			<div class="insure-base-info-step2">
+				<h4 class="ui-bar ui-bar-a">保险生效日期</h4>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<input type="radio" name="insure_allRisk" value="all" checked="checked" id="insure_allRisk_all"/>
+                        <label for="insure_allRisk_all">同时投保商业险和交强险</label>
+                        <input type="radio" name="insure_allRisk" value="sy" id="insure_allRisk_sy"/>
+                        <label for="insure_allRisk_sy">单保商业险</label>    
+                     	<input type="radio" name="insure_allRisk" value="jq" id="insure_allRisk_jq"/>
+                        <label for="insure_allRisk_jq">单保交强险</label>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>是否同时生效:</legend>
+						<input type="radio" name="insure_sameTimely" value="1" checked="checked" id="insure_sameTimely_yes"/>
+                        <label for="insure_sameTimely_yes">是</label>
+                        <input type="radio" name="insure_sameTimely" value="0" id="insure_sameTimely_no"/>
+                        <label for="insure_sameTimely_no">否</label>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>商业险是否即时生效:</legend>
+						<input type="radio" name="insure_timely" value="1" id="insure_timely_yes"/>
+                        <label for="insure_timely_yes">是</label>
+                        <input type="radio" name="insure_sameTimely" value="0" checked="checked" id="insure_timely_no"/>
+                        <label for="insure_timely_no">否</label>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>您期望的商业险保单生效日期:</legend>
+						<input type="date" name="ctTemp.ctQuoteMain.ctQuoteRisks[0].startDate" id="ctTemp.ctQuoteMain.ctQuoteRisks[0].startDate" />至
+						<input type="date" name="ctTemp.ctQuoteMain.ctQuoteRisks[0].endDate" id="ctTemp.ctQuoteMain.ctQuoteRisks[0].endDate" />
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>交强险是否即时生效:</legend>
+						<input type="radio" name="insure_timely1" value="1" id="insure_timely1_yes"/>
+                        <label for="insure_timely1_yes">是</label>
+                        <input type="radio" name="insure_timely1" value="0" checked="checked" id="insure_timely1_no"/>
+                        <label for="insure_timely1_no">否</label>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>您期望的交强险保单生效日期:</legend>
+						<input type="date" name="ctTemp.ctQuoteMain.ctQuoteRisks[1].startDate" id="ctTemp.ctQuoteMain.ctQuoteRisks[1].startDate" />至
+						<input type="date" name="ctTemp.ctQuoteMain.ctQuoteRisks[1].endDate" id="ctTemp.ctQuoteMain.ctQuoteRisks[1].endDate" />
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<button>上一步</button>
+						<button>下一步</button>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+		<div class="mod2">
+			<h4 class="ui-bar ui-bar-a">基本信息</h4>
+			<div class="ui-field-contain">
+				<label for="insure_carLicenseNo">号牌号码:</label>
+				<input type="button" name="insure_carLicenseNo" id="insure_carLicenseNo">
+			</div>
+			<div class="ui-field-contain">
+				<label for="insure_carEngineNo">发动机号:</label>
+				<input type="text" name="insure_carEngineNo" id="insure_carEngineNo">
+			</div>
+			<div class="ui-field-contain">
+				<label for="insure_carFrameNo">车架号:</label>
+				<input type="text" name="insure_carFrameNo" id="insure_carFrameNo">
+			</div>
+			<div class="ui-field-contain">
+				<label for="insure_vincode">VIN码:</label>
+				<input type="text" name="insure_vincode" id="insure_vincode">
+			</div>
+			<div class="ui-field-contain">
+				<label for="insure_licenseType">号牌种类代码:</label>
+				<select name="insure_licenseType" id="insure_licenseType">
+					<option value="">--请选择--</option>
+					<option id="insure_licenseType01" value="01">大型汽车号牌</option>
+					<option id="insure_licenseType02" value="02" selected="selected">小型汽车号牌</option>
+					<option id="insure_licenseType03" value="03">使馆汽车号牌</option>
+					<option id="insure_licenseType04" value="04">领馆汽车号牌</option>
+					<option id="insure_licenseType05" value="05">境外汽车号牌</option>
+					<option id="insure_licenseType06" value="06">外籍汽车号牌</option>
+					<option id="insure_licenseType07" value="07">两、三轮摩托车号牌</option>
+					<option id="insure_licenseType08" value="08">轻便摩托车号牌</option>
+					<option id="insure_licenseType09" value="09">使馆摩托车号牌</option>
+					<option id="insure_licenseType10" value="10">领馆摩托车号牌</option>
+					<option id="insure_licenseType11" value="11">境外摩托车号牌</option>
+					<option id="insure_licenseType12" value="12">外籍摩托车号牌</option>
+					<option id="insure_licenseType13" value="13">农用运输车号牌</option>
+					<option id="insure_licenseType14" value="14">拖拉机号牌</option>
+					<option id="insure_licenseType15" value="15">挂车号牌</option>
+					<option id="insure_licenseType16" value="16">教练车号牌</option>
+					<option id="insure_licenseType17" value="17">教练摩托车号牌</option>
+					<option id="insure_licenseType18" value="18">试验汽车号牌</option>
+					<option id="insure_licenseType19" value="19">试验摩托车号牌</option>
+					<option id="insure_licenseType20" value="20">临时入境汽车号牌</option>
+					<option id="insure_licenseType21" value="21">临时入境摩托车号牌</option>
+					<option id="insure_licenseType22" value="22">临时行驶车号牌</option>
+					<option id="insure_licenseType23" value="23">公安警车号牌</option>
+					<option id="insure_licenseType24" value="24">公安民用号牌</option>
+					<option id="insure_licenseType25" value="25">其他</option>
+					<option id="insure_licenseType31" value="31">武警号牌</option>
+					<option id="insure_licenseType32" value="32">军队号牌</option>
+				</select>
+			</div>
+			<div class="ui-field-contain">
+				<label for="insure_licensecolor">号牌底色:</label>
+				<select name="insure_licensecolor" id="insure_licensecolor">
+					<option value=''>--请选择--</option>    	
+                	<option id="insure_licensecolor01" value="01">蓝</option>
+                	<option id="insure_licensecolor02" value="02">黑</option>
+                	<option id="insure_licensecolor03" value="03">白</option>
+                	<option id="insure_licensecolor99" value="99">其他</option>
+                	<option id="insure_licensecolor05" value="05">白蓝</option>
+                	<option id="insure_licensecolor06" value="06">绿</option>
+                	<option id="insure_licensecolor04" value="04">黄</option>
+				</select>
+			</div>
+			<div class="ui-field-contain">
+				<label for="insure_carKindCode">车辆种类:</label>
+				<select name="insure_carKindCode" id="insure_carKindCode">
+					<option value=''>--请选择--</option>
+                	<option id="insure_carKindCodeA0" value="A0">客车</option>
+                	<option id="insure_carKindCodeTV" value="TV">专用净水车</option>
+                	<option id="insure_carKindCodeG1" value="G1">装置有油罐、汽罐、液罐的挂车</option>
+                	<option id="insure_carKindCodeG2" value="G2">半挂牵引车</option>
+                	<option id="insure_carKindCodeG3" value="G3">装置有油罐、汽罐、液罐以外罐体的挂车</option>
+                	<option id="insure_carKindCodeG4" value="G4">装置有固定专业仪器设备从事专业工作的挂车</option>
+                	<option id="insure_carKindCodeG5" value="G5">装置有冷藏、保温的设备的挂车</option>
+                	<option id="insure_carKindCodeH0" value="H0">货车</option>
+                	<option id="insure_carKindCodeH1" value="H1">低速载货汽车</option>
+                	<option id="insure_carKindCodeJ1" value="J1">兼用型拖拉机</option>
+                	<option id="insure_carKindCodeJ2" value="J2">运输型拖拉机</option>
+                	<option id="insure_carKindCodeJ3" value="J3">普通变型拖拉机</option>
+                	<option id="insure_carKindCodeJ4" value="J4">超标变型拖拉机</option>
+                	<option id="insure_carKindCodeJ5" value="J5">三轮汽车</option>
+                	<option id="insure_carKindCodeM0" value="M0">摩托车</option>
+                	<option id="insure_carKindCodeM2" value="M2">侧三轮摩托车</option>
+                	<option id="insure_carKindCodeT1" value="T1">起重车</option>
+                	<option id="insure_carKindCodeT19" value="T19">特一费率其他</option>
+                	<option id="insure_carKindCodeT2" value="T2">装卸车</option>
+                	<option id="insure_carKindCodeT20" value="T20">特种车二其它</option>
+                	<option id="insure_carKindCodeT21" value="T21">牵引车</option>
+                	<option id="insure_carKindCodeT22" value="T22">清障车</option>
+                	<option id="insure_carKindCodeT23" value="T23">清扫车</option>
+                	<option id="insure_carKindCodeT24" value="T24">升降车</option>
+                	<option id="insure_carKindCodeT25" value="T25">搅拌车</option>
+                	<option id="insure_carKindCodeT26" value="T26">挖掘车</option>
+                	<option id="insure_carKindCodeT27" value="T27">推土车</option>
+                	<option id="insure_carKindCodeT28" value="T28">水泥泵车</option>
+                	<option id="insure_carKindCodeT29" value="T29">特种车一以外的罐式货车</option>
+                	<option id="insure_carKindCodeT3" value="T3">工程车</option>
+                	<option id="insure_carKindCodeT31" value="T31">运钞车</option>
+                	<option id="insure_carKindCodeT39" value="T39">特种车三其他</option>
+                	<option id="insure_carKindCodeT4" value="T4">监测车</option>
+                	<option id="insure_carKindCodeT5" value="T5">邮电车</option>
+                	<option id="insure_carKindCodeT6" value="T6">消防车</option>
+                	<option id="insure_carKindCodeT7" value="T7">清洁车</option>
+                	<option id="insure_carKindCodeT8" value="T8">医疗车</option>
+                	<option id="insure_carKindCodeT9" value="T9">救护车</option>
+                	<option id="insure_carKindCodeTC" value="TC">电视转播车</option>
+                	<option id="insure_carKindCodeTP" value="TP">油罐车</option>
+                	<option id="insure_carKindCodeTQ" value="TQ">气罐车</option>
+                	<option id="insure_carKindCodeTR" value="TR">液罐车</option>
+                	<option id="insure_carKindCodeTS" value="TS">冷藏车</option>
+                	<option id="insure_carKindCodeTT" value="TT">集装箱专用运输车</option>
+                	<option id="insure_carKindCodeTU" value="TU">保温车</option>
+                	<option id="insure_carKindCodeG0" value="G0">挂车</option>
+				</select>
+			</div>
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<legend for="insure_carEnrollDate">车辆初次登记日期:</legend>
+					<input type="date" name="insure_carEnrollDate" id="insure_carEnrollDate" />
+				</fieldset>
+			</div>
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<legend for="insure_publishDate">发证日期:</legend>
+					<input type="date" name="insure_publishDate" id="insure_publishDate" />
+				</fieldset>
+			</div>
+			<div class="ui-field-contain">
+				<label for="insure_useNatureCode">车辆使用性质:</label>
+				<select name="insure_useNatureCode" id="insure_useNatureCode">
+					<option value=''>--请选择--</option>
+                	<option id="insure_useNatureCode8A" value="8A">家庭自用</option>
+                	<option id="insure_useNatureCode8B" value="8B">非营业企业</option>
+                	<option id="insure_useNatureCode9D" value="9D">营业货运</option>
+                	<option id="insure_useNatureCode9A" value="9A">营业出租租赁</option>
+                	<option id="insure_useNatureCode9B" value="9B">营业城市公交</option>
+                	<option id="insure_useNatureCode9C" value="9C">营业公路客运</option>
+                	<option id="insure_useNatureCode8D" value="8D">非营业个人</option>
+				</select>
+			</div>
+			<div class="ui-field-contain">
+				<label for="insure_brandmodel">车型查询条件:</label>
+				<input type="text" name="insure_brandmodel" id="insure_brandmodel" placeholder="车型名称">
+			</div>
+			<div class="ui-field-contain">
+				<label for="insure_standarNames">车辆配置型号:</label>
+				<select name="insure_standarNames" id="insure_standarNames">
+					<option value=''>--请选择--</option>
+				</select>
+			</div>
+			<div class="ui-field-contain">
+				<label for="insure_nameofModel">厂牌型号:</label>
+				<input type="text" name="insure_nameofModel" id="insure_nameofModel">
+			</div>
+			<div class="ui-field-contain">
+				<label for="insure_registmodelcode">行驶证车辆类型:</label>
+				<select name="insure_registmodelcode" id="insure_registmodelcode">
+					<option value="">--请选择--</option>
+					<option selected="selected" id="insure_registmodelcodeK33" value="K33">轿车</option>
+					<option id="insure_registmodelcodeK31" value="K31">小型普通客车</option>
+					<option id="insure_registmodelcodeM21" value="M21">普通二轮摩托车</option>
+					<option id="insure_registmodelcodeH31" value="H31">轻型普通货车</option>
+					<option id="insure_registmodelcodeH32" value="H32">轻型厢式货车</option>
+					<option id="insure_registmodelcodeK32" value="K32">小型越野客车</option>
+					<option id="insure_registmodelcodeQ11" value="Q11">重型半挂牵引车</option>
+					<option id="insure_registmodelcodeH17" value="H17">重型自卸货车</option>
+					<option id="insure_registmodelcodeK11" value="K11">大型普通客车</option>
+					<option id="insure_registmodelcodeH11" value="H11">重型普通货车</option>
+					<option id="insure_registmodelcodeB11" value="B11">重型普通半挂车</option>
+					<option id="insure_registmodelcodeK21" value="K21">中型普通客车</option>
+					<option id="insure_registmodelcodeH37" value="H37">轻型自卸货车</option>
+					<option id="insure_registmodelcodeM11" value="M11">普通正三轮摩托车</option>
+					<option id="insure_registmodelcodeK41" value="K41">微型普通客车</option>
+					<option id="insure_registmodelcodeH21" value="H21">中型普通货车</option>
+					<option id="insure_registmodelcodeH27" value="H27">中型自卸货车</option>
+					<option id="insure_registmodelcodeH12" value="H12">重型厢式货车</option>
+					<option id="insure_registmodelcodeK43" value="K43">微型轿车</option>
+					<option id="insure_registmodelcodeZ51" value="Z51">重型专项作业车</option>
+					<option id="insure_registmodelcodeZ11" value="Z11">大型专项作业车</option>
+					<option id="insure_registmodelcodeB12" value="B12">重型厢式半挂车</option>
+					<option id="insure_registmodelcodeH22" value="H22">中型厢式货车</option>
+					<option id="insure_registmodelcodeT21" value="T21">中型轮式拖拉机</option>
+					<option id="insure_registmodelcodeM14" value="M14">正三轮载货摩托车</option>
+					<option id="insure_registmodelcodeH18" value="H18">重型特殊结构货车</option>
+					<option id="insure_registmodelcodeB14" value="B14">重型平板半挂车</option>
+					<option id="insure_registmodelcodeH41" value="H41">微型普通货车</option>
+					<option id="insure_registmodelcodeH14" value="H14">重型罐式货车</option>
+					<option id="insure_registmodelcodeH33" value="H33">轻型封闭货车</option>
+					<option id="insure_registmodelcodeB15" value="B15">重型集装箱半挂车</option>
+					<option id="insure_registmodelcodeZ21" value="Z21">中型专项作业车</option>
+					<option id="insure_registmodelcodeT11" value="T11">大型轮式拖拉机</option>
+					<option id="insure_registmodelcodeQ21" value="Q21">中型半挂牵引车</option>
+					<option id="insure_registmodelcodeZ31" value="Z31">小型专项作业车</option>
+					<option id="insure_registmodelcodeT31" value="T31">小型轮式拖拉机</option>
+					<option id="insure_registmodelcodeN11" value="N11">三轮农用运输车</option>
+					<option id="insure_registmodelcodeM22" value="M22">轻便二轮摩托车</option>
+					<option id="insure_registmodelcodeB17" value="B17">重型特殊结构半挂车</option>
+					<option id="insure_registmodelcodeB13" value="B13">重型罐式半挂车</option>
+					<option id="insure_registmodelcodeQ31" value="Q31">轻型半挂牵引车</option>
+					<option id="insure_registmodelcodeH15" value="H15">重型平板货车</option>
+					<option id="insure_registmodelcodeZ71" value="Z71">轻型专项作业车</option>
+					<option id="insure_registmodelcodeH42" value="H42">微型厢式货车</option>
+					<option id="insure_registmodelcodeH38" value="H38">轻型特殊结构货车</option>
+					<option id="insure_registmodelcodeK25" value="K25">中型越野客车</option>
+					<option id="insure_registmodelcodeG11" value="G11">重型普通全挂车</option>
+					<option id="insure_registmodelcodeH28" value="H28">中型特殊结构货车</option>
+					<option id="insure_registmodelcodeH45" value="H45">微型自卸货车</option>
+					<option id="insure_registmodelcodeK13" value="K13">大型卧铺客车</option>
+					<option id="insure_registmodelcodeK22" value="K22">中型双层客车</option>
+					<option id="insure_registmodelcodeB21" value="B21">中型普通半挂车</option>
+					<option id="insure_registmodelcodeG21" value="G21">中型普通全挂车</option>
+					<option id="insure_registmodelcodeG16" value="G16">重型自卸全挂车</option>
+					<option id="insure_registmodelcodeH13" value="H13">重型封闭货车</option>
+					<option id="insure_registmodelcodeH25" value="H25">中型平板货车</option>
+					<option id="insure_registmodelcodeH34" value="H34">轻型罐式货车</option>
+					<option id="insure_registmodelcodeB16" value="B16">重型自卸半挂车</option>
+					<option id="insure_registmodelcodeM15" value="M15">侧三轮摩托车</option>
+					<option id="insure_registmodelcodeM13" value="M13">正三轮载客摩托车</option>
+					<option id="insure_registmodelcodeZ41" value="Z41">微型专项作业车</option>
+					<option id="insure_registmodelcodeH23" value="H23">中型封闭货车</option>
+					<option id="insure_registmodelcodeG32" value="G32">轻型厢式全挂车</option>
+					<option id="insure_registmodelcodeJ12" value="J12">轮式挖掘机械</option>
+					<option id="insure_registmodelcodeK42" value="K42">微型越野客车</option>
+					<option id="insure_registmodelcodeB22" value="B22">中型厢式半挂车</option>
+					<option id="insure_registmodelcodeT33" value="T33">手扶变型运输机</option>
+					<option id="insure_registmodelcodeB24" value="B24">中型平板半挂车</option>
+					<option id="insure_registmodelcodeB25" value="B25">中型集装箱半挂车</option>
+					<option id="insure_registmodelcodeB26" value="B26">中型自卸半挂车</option>
+					<option id="insure_registmodelcodeB27" value="B27">中型特殊结构半挂车</option>
+					<option id="insure_registmodelcodeB31" value="B31">轻型普通半挂车</option>
+					<option id="insure_registmodelcodeB32" value="B32">轻型厢式半挂车</option>
+					<option id="insure_registmodelcodeB33" value="B33">轻型罐式半挂车</option>
+					<option id="insure_registmodelcodeB34" value="B34">轻型平板半挂车</option>
+					<option id="insure_registmodelcodeB35" value="B35">轻型自卸半挂车</option>
+					<option id="insure_registmodelcodeD11" value="D11">无轨电车</option>
+					<option id="insure_registmodelcodeD12" value="D12">有轨电车</option>
+					<option id="insure_registmodelcodeG12" value="G12">重型厢式全挂车</option>
+					<option id="insure_registmodelcodeG13" value="G13">重型罐式全挂车</option>
+					<option id="insure_registmodelcodeG14" value="G14">重型平板全挂车</option>
+					<option id="insure_registmodelcodeG15" value="G15">重型集装箱全挂车</option>
+					<option id="insure_registmodelcodeG22" value="G22">中型厢式全挂车</option>
+					<option id="insure_registmodelcodeG23" value="G23">中型罐式全挂车</option>
+					<option id="insure_registmodelcodeG24" value="G24">中型平板全挂车</option>
+					<option id="insure_registmodelcodeG25" value="G25">中型集装箱全挂车</option>
+					<option id="insure_registmodelcodeG26" value="G26">中型自卸全挂车</option>
+					<option id="insure_registmodelcodeG31" value="G31">轻型普通全挂车</option>
+					<option id="insure_registmodelcodeG33" value="G33">轻型罐式全挂车</option>
+					<option id="insure_registmodelcodeG34" value="G34">轻型平板全挂车</option>
+					<option id="insure_registmodelcodeG35" value="G35">轻型自卸全挂车</option>
+					<option id="insure_registmodelcodeH16" value="H16">重型集装箱车</option>
+					<option id="insure_registmodelcodeH24" value="H24">中型罐式货车</option>
+					<option id="insure_registmodelcodeH26" value="H26">中型集装箱车</option>
+					<option id="insure_registmodelcodeH35" value="H35">轻型平板货车</option>
+					<option id="insure_registmodelcodeH43" value="H43">微型封闭货车</option>
+					<option id="insure_registmodelcodeH44" value="H44">微型罐式货车</option>
+					<option id="insure_registmodelcodeH46" value="H46">微型特殊结构货车</option>
+					<option id="insure_registmodelcodeJ11" value="J11">轮式装载机械</option>
+					<option id="insure_registmodelcodeJ13" value="J13">轮式平地机械</option>
+					<option id="insure_registmodelcodeK12" value="K12">大型双层客车</option>
+					<option id="insure_registmodelcodeK14" value="K14">大型铰接客车</option>
+					<option id="insure_registmodelcodeK15" value="K15">大型越野客车</option>
+					<option id="insure_registmodelcodeK23" value="K23">中型卧铺客车</option>
+					<option id="insure_registmodelcodeK24" value="K24">中型铰接客车</option>
+					<option id="insure_registmodelcodeM12" value="M12">轻便正三轮摩托车</option>
+					<option id="insure_registmodelcodeT32" value="T32">手扶拖拉机</option>
+					<option id="insure_registmodelcodeB23" value="B23">中型罐式半挂车</option>
+				</select>
+			</div>
+			<div class="ui-field-contain">
+				<label for="insure_runmilers">已行驶里程:</label>
+				<input type="text" name="insure_runmilers" id="insure_runmilers">公里
+			</div>
+			<div class="ui-field-contain">
+				<label for="insure_addonCount">交通违章记录:</label>
+				<select name="insure_addonCount" id="insure_addonCount">
+					<option value="">--请选择--</option>
+	                <option id="insure_addonCount2" value="2">上年有交通违章记录</option>
+	                <option id="insure_addonCount1" value="1">上年无交通违章记录</option>
+				</select>
+			</div>
+			<div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+				<h4>车辆其他信息</h4>
+				<div class="ui-field-contain">
+					<label for="insure_carSeatCount">核定载客:</label>
+					<input type="text" name="insure_carSeatCount" id="insure_carSeatCount" placeholder="人">
+					<label for="insure_carLimitload">核定载质量:</label>
+					<input type="text" name="insure_carLimitload" id="insure_carLimitload" placeholder="吨">
+					<label for="insure_completekerbmass">整备质量:</label>
+					<input type="text" name="insure_completekerbmass" id="insure_completekerbmass" placeholder="千克">
+					<label for="insure_carExhaustScale">排量/功率:</label>
+					<input type="text" name="insure_carExhaustScale" id="insure_carExhaustScale">
+					<label for="insure_colorCode">车身颜色</label>
+					<select name="insure_colorCode" id="insure_colorCode">
+						<option value=''>--请选择--</option>
+                		<option id="insure_colorCode01" value="01">蓝</option>
+                		<option id="insure_colorCode02" value="02">黑</option>
+                		<option id="insure_colorCode03" value="03">白</option>
+                		<option id="insure_colorCode04" value="04">黄</option>
+                		<option id="insure_colorCode05" value="05">白蓝</option>
+                		<option id="insure_colorCode99" value="99">其他</option>
+                		<option id="insure_colorCode07" value="07">灰</option>
+                		<option id="insure_colorCode08" value="08">绿</option>
+                		<option id="insure_colorCode09" value="09">棕</option>
+                		<option id="insure_colorCode10" value="10">粉</option>
+                		<option id="insure_colorCode11" value="11">紫</option>
+                		<option id="insure_colorCode06" value="06">红</option>
+					</select>
+					<label for="insure_carSpecialflag">特殊车辆种类:</label>
+					<select name="insure_carSpecialflag" id="insure_carSpecialflag">
+						<option value="">--请选择--</option>
+						<option selected="selected" id="insure_carSpecialflag0" value="0">正常车辆</option>
+						<option id="insure_carSpecialflag1" value="1">车辆所有权转移重新投保</option>
+						<option id="insure_carSpecialflag2" value="2">临时入境的境外机动车</option>
+						<option id="insure_carSpecialflag3" value="3">临时上道路行驶的机动车</option>
+						<option id="insure_carSpecialflag4" value="4">距报废期限不足一年的机动车</option>
+						<option id="insure_carSpecialflag5" value="5">其它保监会规定允许投保短期单的车</option>
+					</select>
+					<label for="insure_carAreaCode">行驶区域:</label>
+					<select name="insure_carAreaCode" id="insure_carAreaCode">
+						<option value=''>--请选择--</option>
+            			<option id="insure_carAreaCode01" value="01">本市（地区）</option>
+            			<option id="insure_carAreaCode03" value="03">本省、自治区、直辖市</option>
+            			<option id="insure_carAreaCode04" value="04">中国境内(不含港澳台)</option>
+            			<option id="insure_carAreaCode05" value="05">本省内或单程500公里以内</option>
+            			<option id="insure_carAreaCode81" value="81">粤港两地</option>
+            			<option id="insure_carAreaCode08" value="08">跨省（市、区）</option>
+            			<option id="insure_carAreaCode11" value="11">中华人民共和国境内(不含港澳)</option>
+            			<option id="insure_carAreaCode12" value="12">有固定行驶路线</option>
+            			<option id="insure_carAreaCode06" value="06">场内</option>
+					</select>
+					<label for="insure_carTypeCode">行驶证车型:</label>
+					<input type="text" name="insure_carTypeCode" id="insure_carTypeCode">
+					<label for="insure_purchasePriceid">新车购置价:</label>
+					<input type="text" name="insure_purchasePriceid" id="insure_purchasePriceid">
+				</div>
+			</div>
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<legend>新增设备:</legend>
+					<input type="radio" name="insure_newDevice" id="insure_newDevice_yes" value="1">
+					<label for="insure_newDevice_yes">是</label>
+					<input type="radio" checked="checked" name="insure_newDevice" id="insure_newDevice_no" value="0">
+					<label for="insure_newDevice_no">否</label>
+				</fieldset>
+			</div>
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<legend>约定驾驶员:</legend>
+					<input type="radio" name="insure_carDriverRad" id="insure_carDriverRad_yes" value="1">
+					<label for="insure_carDriverRad_yes">是</label>
+					<input type="radio" checked="checked" name="insure_carDriverRad" id="insure_carDriverRad_no" value="0">
+					<label for="insure_carDriverRad_no">否</label>
+				</fieldset>
+			</div>
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<legend></legend>
+					<button calss="goto-mod1">上一步</button>
+					<button class="goto-mod3 ui-btn-active">下一步</button>
+				</fieldset>
+			</div>
+		</div>
+		<div class="mod3">
+			<div class="mod3-step1">
+				<h4 class="ui-bar ui-bar-a">交强险信息</h4>
+				<div class="ui-field-contain">
+					<label for="insure_carshipLabel">车船税标志:</label>
+					<select name="insure_carshipLabel" id="insure_carshipLabel">
+						<option value="1N">纳税</option>
+	                    <option value="2W">完税</option>
+	                    <option value="3M">免税</option>
+	                    <option selected="selected" value="4J">减税</option>
+	                    <option value="5H">缓税</option>
+					</select>
+				</div>
+				<div class="ui-field-contain">
+					<label for="insure_carArea">车辆归属地:</label>
+					<select name="insure_carArea" id="insure_carArea">
+						<option value="">--请选择--</option>
+						<option id="insure_fueltype530100" value="530100" selected="selected">昆明市</option>
+						<option id="insure_fueltype530300" value="530300">曲靖市</option>
+						<option id="insure_fueltype530400" value="530400">玉溪市</option>
+						<option id="insure_fueltype530500" value="530500">保山市</option>
+						<option id="insure_fueltype530600" value="530600">昭通市</option>
+						<option id="insure_fueltype530700" value="530700">丽江市</option>
+						<option id="insure_fueltype530800" value="530800">普洱市</option>
+						<option id="insure_fueltype530900" value="530900">临沧市</option>
+						<option id="insure_fueltype532300" value="532300">楚雄彝族自治州</option>
+						<option id="insure_fueltype532500" value="532500">红河哈尼族彝族自治州</option>
+						<option id="insure_fueltype532600" value="532600">文山壮族苗族自治州</option>
+						<option id="insure_fueltype532800" value="532800">西双版纳傣族自治州</option>
+						<option id="insure_fueltype532900" value="532900">大理白族自治州</option>
+						<option id="insure_fueltype533100" value="533100">德宏傣族景颇族自治州</option>
+						<option id="insure_fueltype533300" value="533300">怒江傈僳族自治州</option>
+						<option id="insure_fueltype533400" value="533400">迪庆藏族自治州</option>
+					</select>
+				</div>
+				<div class="ui-field-contain">
+					<label for="insure_carArea">所属税务机构:</label>
+					<select name="insure_taxComCode" id="insure_taxComCode" bind="focus">
+						<option value="">--请选择--</option>
+						<option value="00617859">昆明市地方税务局</option>
+						<option value="153019100">昆明市国家税务局直属分局</option>
+						<option value="5301000000">昆明市地方税务局</option>
+						<option value="5301970000">昆明市地方税务局经济开发区分局</option>
+						<option value="5301110000">官渡区地方税务局</option>
+						<option value="5301210000">呈贡县地方税务局</option>
+						<option value="5301250000">宜良县地方税务局</option>
+						<option value="5301810000">安宁市地方税务局</option>
+						<option value="5301030000">盘龙区地方税务局</option>
+						<option value="5301120000">西山区地方税务局</option>
+						<option value="5301130000">东川区地方税务局</option>
+						<option value="5301220000">晋宁县地方税务局</option>
+						<option value="5301240000">富民县地方税务局</option>
+						<option value="5301260000">石林县地方税务局</option>
+						<option value="5301280000">禄劝县地方税务局</option>
+						<option value="5301950000">昆明市地方税务局度假分局</option>
+						<option value="5301020000">五华区地方税务局</option>
+						<option value="5301270000">嵩明县地方税务局</option>
+						<option value="5301960000">昆明市地方税务局高新技术产业开发区分局</option>
+						<option value="5301290000">寻甸县地方税务局</option>
+						<option value="5301900000">昆明市地方税务局直属征收分局</option>
+						<option value="530130000">盘龙区地方税局</option>
+						<option value="02851637">嵩明县地方税务局</option>
+						<option value="02950719">嵩明县税务局</option>
+						<option value="45678">东川地税</option>
+						<option value="53012500">宜良县地方税务局</option>
+						<option value="0953012201002201">呈贡县地方税务局一分局</option>
+						<option value="0953010700019793">昆明市旅游度假区地方税务局</option>
+						<option value="530122197712311149">晋宁县地方税务局一分局</option>
+						<option value="0653011200046293">五华区地方税务局</option>
+						<option value="1530103000533655">昆明市盘龙区地方税务局</option>
+						<option value="S532724197601280615">昆明市盘龙区地方税务局</option>
+						<option value="0953012801000175">昆明市地方税务局</option>
+						<option value="530126">石林县地方税务局</option>
+						<option value="0953011400000216">昆明市西山区地方税务局</option>
+						<option value="KL565615465465656">KL565615465465656</option>
+						<option value="宜良县地方税务局">宜良县地方税务局</option>
+						<option value="201053011100375429">昆明市盘龙区地方税务局一分局</option>
+						<option value="12554544555411">东川地税</option>
+						<option value="嵩明县地方税务局">嵩明县地方 税务局</option>
+						<option value="53223319790905033X">昆明市官渡区地方税务局一分局</option>
+						<option value="嵩明县地方" 税务局="">嵩明县地方 税务局据</option>
+						<option value="53012719490422171X">嵩明县地方税务局</option>
+						<option value="0045868">昆明市盘龙区税务局一分局</option>
+						<option value="12134565">东川地税</option>
+						<option value="1255993">昆明市官渡区地方税务局一分局</option>
+						<option value="520202198503163082">昆明市盘龙区地方税务局</option>
+						<option value="532369514132">昆明市五华区地税局</option>
+						<option value="00456897">昆明市盘龙区税务局一分局</option>
+						<option value="53030">昆明市盘龙区地方税务局</option>
+						<option value="53030103">昆明市盘龙区地方税务局</option>
+						<option value="5301515">454</option>
+						<option value="53012600000">5301260000</option>
+						<option value="5601270000">嵩明地方税务局</option>
+						<option value="4567889">东川地税</option>
+						<option value="53012370000">嵩明地方税务局</option>
+						<option value="530102581222071">赵贵黔530102581222071</option>
+						<option value="44567898">东川地税</option>
+						<option value="00051099">嵩明县地方税务局</option>
+						<option value="85214">昆明地税</option>
+						<option value="00237399">昆明西山区地税局</option>
+						<option value="02953372">嵩明县地方税务局</option>
+						<option value="201253012400031162">晋宁县地方税务局一分局</option>
+						<option value="0953011300011341">昆明市官渡区地方税务局</option>
+						<option value="0953011300000685">昆明市官渡区地方税务局</option>
+						<option value="53010000">昆明市盘龙区地方税局</option>
+						<option value="530113">官渡区地方税务局</option>
+						<option value="昆明市禄劝县地方税务">昆明市禄劝县地方税务局</option>
+						<option value="0953011400012278">昆明市西山区地方税务局</option>
+						<option value="530103000">昆明市盘龙区地方税务局</option>
+						<option value="S530112197704293531">昆明市五华区地税局</option>
+						<option value="0953011300132355">昆明市官渡区地方税务局</option>
+						<option value="53010030000">53010030000</option>
+						<option value="S512324196903221776">昆明市盘龙区地方税务局</option>
+						<option value="S440111197">昆明市官渡区地方税务局</option>
+						<option value="530100">昆明市地税局</option>
+						<option value="04403825">盘龙区地方税务局</option>
+						<option value="253990830003">宜良县地方税务局</option>
+						<option value="0953011400041345">昆明市西山区地方税务局</option>
+						<option value="04529432">呈贡县地方税务局一分局</option>
+						<option value="530100000">昆明市盘龙区地方税局</option>
+						<option value="04403297">盘龙区地方税务局</option>
+						<option value="53010000000">昆明市盘龙区地方税局</option>
+						<option value="530122198006150012">晋宁县地方税务局一分局</option>
+						<option value="00971230">昆明市五华区地方税务局</option>
+						<option value="L3JTX51A056006111">昆明市禄劝县地方税务局</option>
+						<option value="盘龙区地方税务局">5301030000</option>
+						<option value="530124">富民县地税局</option>
+						<option value="00021780">昆明市西山区地方税务局</option>
+						<option value="53042201000">呈贡县地方税务局一税局</option>
+						<option value="53001260000">5301260000</option>
+						<option value="53012365987">昆明市五华区税务局</option>
+						<option value="00773288">嵩明县地方税务局</option>
+						<option value="01280397">昆明市西山区地方税务局一分局</option>
+						<option value="5311100">昆明市盘龙区地方税务局一分局</option>
+						<option value="00462282">嵩明县地方税务局</option>
+						<option value="02944499">嵩明县地方税务局</option>
+						<option value="00788883">官渡区地方税务局</option>
+						<option value="530121">呈贡县地方税务局一分局</option>
+						<option value="00243313">嵩明县地方税务局</option>
+						<option value="02414385">嵩明县地方税务局</option>
+						<option value="53010300000">盘龙区地方税务局</option>
+						<option value="510214196412191218">昆明市地方税务局</option>
+						<option value="5301290002541">寻甸县税务局</option>
+						<option value="201353011300224037">昆明市官渡区地方税务局一分局</option>
+						<option value="201153011300057305">昆明市地方税务局</option>
+						<option value="79289546">寻甸地税</option>
+						<option value="53012900005241">寻甸县税务局</option>
+						<option value="00341905">昆明市盘龙区地方税务局一分局</option>
+						<option value="530122196310120812">晋宁县地方税务局</option>
+						<option value="2010A">寻甸地税</option>
+						<option value="530125">宜良县地方税务局</option>
+						<option value="201253011400021825">昆明市西山区地方税务局一分局</option>
+						<option value="20125301120002">五华地税</option>
+						<option value="5301140000">西山区地方税务局</option>
+						<option value="5301070000">昆明市旅游度假区分局</option>
+						<option value="00526070">昆明市旅游度假区分局</option>
+						<option value="00251479">嵩明县地方税局</option>
+						<option value="530111000">官渡地税</option>
+						<option value="530120">寻甸地税</option>
+						<option value="530122197307102327">晋宁县地方税务局</option>
+						<option value="53012219901118182X">晋宁县地方税务局一分局</option>
+						<option value="201353811300222863">昆明市官渡区地方税务局一分局</option>
+						<option value="76531256">昆明市地方税务局</option>
+						<option value="00596634">宜良县地方税务局一分局</option>
+						<option value="53012800000">禄劝县地方税务局</option>
+						<option value="20125301120002">五华区税务局</option>
+						<option value="201253011100053245">昆明市盘龙区地方税务局</option>
+						<option value="2012530113000996860">昆明市盘龙区地方税务局</option>
+						<option value="2012530113000996870">昆明市盘龙区地方税务局</option>
+						<option value="530111">昆明市官渡区地方税务局一分局</option>
+						<option value="00790240">嵩明县地方税务局</option>
+						<option value="00793901">寻甸地税</option>
+						<option value="530127">嵩明县地方税务局王分局</option>
+						<option value="530122198402150815">晋宁县地方税务局一分局</option>
+						<option value="532228500222001">昆明市西山区地方税务局一分局</option>
+						<option value="5301130047769">昆明市官渡区地方税务局一分局</option>
+						<option value="530122196507153255">明市盘龙区税务局一分局</option>
+						<option value="530122196710280831">晋宁县地方税务局一分局</option>
+						<option value="53011100">官渡地税</option>
+						<option value="530128000000">昆明市禄劝县地方税务局</option>
+						<option value="530114">西山地税</option>
+						<option value="2012530113000996850">昆明市盘龙区地方税务局</option>
+						<option value="7651253*">昆明市地方税务局</option>
+						<option value="5031030000">盘龙区地方税务局</option>
+						<option value="5301221965021001X">晋宁县地方税务局一分局</option>
+						<option value="530122">呈贡县地方税务局</option>
+						<option value="201253011205521411">昆明市五华区地方税务局一分局</option>
+						<option value="530128">禄劝地税局</option>
+						<option value="530122450510111">晋宁县地方税务局一分局</option>
+						<option value="530122197204081316">晋宁县地方税务局一分局</option>
+						<option value="201353011100129948">昆明市盘龙区地方税务局第一分局</option>
+						<option value="00582942">昆明市五华区地方税务局一分局</option>
+						<option value="201253011400002008">西山区地方税务局</option>
+						<option value="2012530113000996880">昆明市盘龙区地方税务局</option>
+						<option value="04257610">官渡区地方税务局</option>
+						<option value="2012530103000026980">昆明市盘龙区地方税务局</option>
+						<option value="5301130036487">官渡区地方税务局</option>
+						<option value="530113000">昆明市盘龙区地方税务局</option>
+						<option value="2012530381">宣威市地税局一分局</option>
+						<option value="530112">五华地税</option>
+						<option value="530122197712230015">晋宁县地方税务局</option>
+						<option value="201253011300015337">昆明市地方税务局</option>
+						<option value="53011400103789">昆明市西山区地方税务局一分局</option>
+						<option value="530122195307010618">晋宁县地方税务局一分局</option>
+						<option value="00773032">官渡区地方税务局</option>
+						<option value="5301112012000005">盘龙地税</option>
+						<option value="201253012400032085">晋宁县地方税务局一分局</option>
+						<option value="1101530967">嵩明县国家税务局</option>
+						<option value="5430102196804152739">盘龙区地方税务局</option>
+						<option value="00782563">寻甸地税</option>
+						<option value="530210000">呈贡县地方税务局一分局</option>
+						<option value="43042619540404667X">晋宁县地方税务局一分局</option>
+						<option value="201253010700046190">昆明市旅游度假区分局</option>
+						<option value="73432873-4">晋宁县地方税务局一分局</option>
+						<option value="53012900002541">53012900002541</option>
+						<option value="02944395">嵩明县地方税务局</option>
+						<option value="00066608">嵩明县地方税务局</option>
+						<option value="5301260001269">禄劝县地方税务局</option>
+						<option value="2012A">寻甸地税</option>
+						<option value="201253011200521411">昆明市五华区地方税务局一分局</option>
+						<option value="201353012500016774">石林县地方税务局</option>
+						<option value="00793900">寻甸地税</option>
+						<option value="20125301140002008">西山区地方税务局</option>
+						<option value="530129000000548721">寻甸地税</option>
+						<option value="530103">昆明市盘龙区地方税务一分局</option>
+						<option value="420922700920003">昆明市官渡区地方税务局 一分局</option>
+						<option value="53012919870810072">寻甸地税</option>
+						<option value="5301090000">昆明市地方税务局直属征收分局</option>
+						<option value="10114010-0">昆明市地方税务局</option>
+						<option value="201353011100175924">昆明市盘龙区地方税务局-分局</option>
+						<option value="530129002541">寻甸县 税务局</option>
+						<option value="53012219690302085X">晋宁县地方税务局一分局</option>
+						<option value="53020000">盘龙区地方税务局</option>
+						<option value="5312900002541">寻甸地税局</option>
+						<option value="530129">寻甸地税</option>
+						<option value="530112002">五华区地方税务局</option>
+						<option value="201253011400083665">昆明市西山区地方税务局</option>
+						<option value="530120000">五华区地方税务局</option>
+						<option value="530122197407140822">晋宁县地方税务局一分局</option>
+						<option value="178232156">不合格</option>
+						<option value="昆明地税">寻甸地税</option>
+						<option value="00775306">嵩明县地方税务局</option>
+						<option value="201301255689001245">盘龙区地方税务局</option>
+						<option value="00085724">昆明市西山区地方税务局一分局</option>
+						<option value="201353012200047888">呈贡区地方税务局一分局</option>
+						<option value="2013530113000364827">昆明市官渡区地方税务局</option>
+						<option value="530195000">昆明市地方税务局度假分局</option>
+						<option value="2013530113000000165">昆明市官渡区地方税务局</option>
+						<option value="201253011462886730">昆明市官渡区地方税务局</option>
+						<option value="201353011200128452">昆明市盘龙区地方税务局</option>
+						<option value="530122198206283231">晋宁县地方税务局</option>
+						<option value="201353012300002001">昆明市富民县地方税务局</option>
+						<option value="2013532020256254789">昆明市西山区地方务局一分局</option>
+						<option value="201353011300002871">昆明市官渡区地方税务局</option>
+						<option value="25325698-9">昆明市旅游度假区分局</option>
+						<option value="53011119610521081X">晋宁县地方税务局</option>
+						<option value="201353011200021547">昆明市西山区地方税务局</option>
+						<option value="2013530113000778562">昆明市官渡区地方税务局</option>
+						<option value="5301230026438">富民县地方官税务局</option>
+						<option value="530381197312091037">晋宁县地方税务局一分局</option>
+						<option value="5301120052900">昆明市地方税务局</option>
+						<option value="530122197004022047">昆明市旅游度假区七检站代征点</option>
+						<option value="00370083">昆明市旅游度假区七检站代征点</option>
+						<option value="20135301100173540">昆明市盘龙区地方税务局一分局</option>
+						<option value="201353011400025693">昆明市官渡区地方税务局</option>
+						<option value="201353011400002024">昆明市西山区地方税务局</option>
+						<option value="5201020000">盘龙区地方税务局</option>
+						<option value="034711070">昆明市旅游度假区分局</option>
+						<option value="625220202052">昆明市地方税务局</option>
+						<option value="530100000000">昆明市五华区地方税务局一分局</option>
+						<option value="530122195708270816">昆明市西山区地方税务局一分局</option>
+						<option value="71949817-X">昆明市西山区地方税务局一分局</option>
+						<option value="25325698-1">昆明市地方税务局</option>
+						<option value="2013530302020059463">5303</option>
+						<option value="530103000000">盘龙区地方税务局</option>
+						<option value="132336197204070613">晋宁县地方税务局</option>
+						<option value="昆明地方税务局">昆明地方税务局</option>
+						<option value="201353011300081014">昆明市盘龙区地方税务局</option>
+						<option value="201253011200021365">昆明市西山区地方税务局</option>
+						<option value="201353011100290079">昆明市盘龙区地六税务局一分局</option>
+						<option value="20125301130081014">昆明市盘龙区地方税务局</option>
+						<option value="530122195204101138">昆明市旅游度假区地方税务局</option>
+						<option value="201353011300000631">昆明市官渡区地方税务局</option>
+						<option value="00999110">嵩明县地方税务局</option>
+						<option value="77550343-9">晋宁县地方税务局</option>
+						<option value="201353011100211240">昆明市盘龙区地方税务局一分局</option>
+						<option value="530122197012101319">晋宁县地方税务局一分局</option>
+						<option value="253001201055">昆明市地方税务局</option>
+						<option value="2013530111000222856">昆明市盘龙区地方税务局</option>
+						<option value="201253011100063247">昆明市盘龙区地方税务局</option>
+						<option value="201353012300002024">昆明市富民县地方税务局</option>
+						<option value="2012530111000235540">昆明市盘龙区地方税务局</option>
+						<option value="71941011-5">晋宁县地方税务局</option>
+					</select>
+				</div>
+				<div class="ui-field-contain">
+					<label for="insure_taxpayerName">纳税人名称:</label>
+					<input name="insure_taxpayerName" id="insure_taxpayerName" type="text">
+				</div>
+				<div class="ui-field-contain">
+					<label for="insure_taxPayerCertiCode">纳税人证件号码:</label>
+					<input name="insure_taxPayerCertiCode" id="insure_taxPayerCertiCode" type="text">
+				</div>
+				<div class="ui-field-contain">
+					<label for="insure_taxpayeridentifier">纳税人识别号:</label>
+					<input name="insure_taxpayeridentifier" id="insure_taxpayeridentifier">
+				</div>
+				<div class="ui-field-contain">
+					<label for="insure_taxPayerAddress">纳税人住址:</label>
+					<textarea name="insure_taxPayerAddress" id="insure_taxPayerAddress"></textarea>
+				</div>
+				<div class="ui-field-contain">
+					<label for="insure_baseTaxAtion">减免税方式:</label>
+					<select name="insure_baseTaxAtion" id="insure_baseTaxAtion">
+						<option value="1">按金额进行减免</option>
+						<option selected="selected" value="2">按比例进行减免</option>
+					</select>
+				</div>
+				<div class="ui-field-contain">
+					<label for="insure_freerate">减免比例:</label>
+					<input readonly="readonly" name="" id="insure_freerate"  type="text">
+				</div>
+				<div class="ui-field-contain">
+					<label for="insure_calculateMode">计算方式:</label>
+					<select name="insure_calculateMode" id="insure_calculateMode">
+	                	<option value="C1">使用一年以上</option>
+	                	<option value="C2">新车</option> 
+	                	<option value="C3">境外机动车临时入境</option> 
+	                	<option value="C4">机动车临时上道路行驶</option> 
+	                	<option value="C5">机动车距规定的报废期限不足一年</option>  
+	                	<option value="C6">使用一年以上而从未交过税的车辆</option> 
+	                </select>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend></legend>
+						<button class="goto-mod2">上一步</button>
+						<button class="goto-mod3-step2 ui-btn-active">下一步</button>
+					</fieldset>
+				</div>
+			</div>
+			<div class="mod3-step2">
+				<h4 class="ui-bar ui-bar-a">投保商业险</h4>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>机动车损失保险</legend>
+						<label for="insure_GP00000000_A">投保</label>
+						<input name="insure_GP00000000_A" id="insure_GP00000000_A" type="checkbox">
+						<label for="insure_GP00000000_A_flagM">不计免赔</label>
+						<input name="insure_GP00000000_A_flagM" id="insure_GP00000000_A_flagM" type="checkbox">
+						<input name="insure_GP00000000_A_amount" id="insure_GP00000000_A_amount" type="text" placeholder="保额" data-wrapper-class="controlgroup-textinput ui-btn">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>第三者责任保险</legend>
+						<label for="insure_GP00000000_B">投保</label>
+						<input name="insure_GP00000000_B" id="insure_GP00000000_B" type="checkbox">
+						<label for="insure_GP00000000_B_flagM">不计免赔</label>
+						<input name="insure_GP00000000_B_flagM" id="insure_GP00000000_B_flagM" type="checkbox">
+						<input name="insure_GP00000000_B_amount" id="insure_GP00000000_B_amount" type="text" placeholder="保额" data-wrapper-class="controlgroup-textinput ui-btn">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>车上人员责任保险(驾驶人)</legend>
+						<label for="insure_GP00000000_D11">投保</label>
+						<input name="insure_GP00000000_D11" id="insure_GP00000000_D11" type="checkbox">
+						<label for="insure_GP00000000_D11_flagM">不计免赔</label>
+						<input name="insure_GP00000000_D11_flagM" id="insure_GP00000000_D11_flagM" type="checkbox">
+						<input name="insure_GP00000000_D11_amount" id="insure_GP00000000_D11_amount" type="text" placeholder="保额" data-wrapper-class="controlgroup-textinput ui-btn">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>车上人员责任保险(乘客)</legend>
+						<label for="insure_GP00000000_D12">投保</label>
+						<input name="insure_GP00000000_D12" id="insure_GP00000000_D12" type="checkbox">
+						<label for="insure_GP00000000_D12_flagM">不计免赔</label>
+						<input name="insure_GP00000000_D12_flagM" id="insure_GP00000000_D12_flagM" type="checkbox">
+						<input name="insure_GP00000000_D12_amount" id="insure_GP00000000_D12_amount" type="text" placeholder="保额" data-wrapper-class="controlgroup-textinput ui-btn">
+						<button>x4</button>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>盗抢险</legend>
+						<label for="insure_GP00000000_G">投保</label>
+						<input name="insure_GP00000000_G" id="insure_GP00000000_G" type="checkbox">
+						<label for="insure_GP00000000_G_flagM">不计免赔</label>
+						<input name="insure_GP00000000_G_flagM" id="insure_GP00000000_G_flagM" type="checkbox">
+						<input name="insure_GP00000000_G_amount" id="insure_GP00000000_G_amount" type="text" placeholder="保额" data-wrapper-class="controlgroup-textinput ui-btn">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>指定汽车专修厂特约</legend>
+						<label for="insure_GP00000000_A4">投保</label>
+						<input name="insure_GP00000000_A4" id="insure_GP00000000_A4" type="checkbox">
+						<label for="insure_GP00000000_A4_flagM">不计免赔</label>
+						<input name="insure_GP00000000_A4_flagM" id="insure_GP00000000_A4_flagM" type="checkbox">
+						<button>车损险上浮系数</button>
+						<input name="insure_GP00000000_A4_amount" id="insure_GP00000000_A4_amount" type="text" value="0" data-wrapper-class="controlgroup-textinput width-10 ui-btn">
+						<button>%</button>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>异地出险住宿费特约</legend>
+						<label for="insure_GP00000000_C5">投保</label>
+						<input name="insure_GP00000000_C5" id="insure_GP00000000_C5" type="checkbox">
+						<label for="insure_GP00000000_C5_flagM">不计免赔</label>
+						<input name="insure_GP00000000_C5_flagM" id="insure_GP00000000_C5_flagM" type="checkbox">
+						<select name="insure_GP00000000_C5_amount" id="insure_GP00000000_C5_amount">
+							<option value="500" selected="selected">500</option>
+							<option value="800">800</option>
+							<option value="1000">1000</option>
+						</select>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>法律费用特约</legend>
+						<label for="insure_GP00000000_C6">投保</label>
+						<input name="insure_GP00000000_C6" id="insure_GP00000000_C6" type="checkbox">
+						<label for="insure_GP00000000_C6_flagM">不计免赔</label>
+						<input name="insure_GP00000000_C6_flagM" id="insure_GP00000000_C6_flagM" type="checkbox">
+						<select name="insure_GP00000000_C6_amount" id="insure_GP00000000_C6_amount">
+							<option value="10000">1万元</option>
+							<option value="20000">2万元</option>
+							<option value="50000">5万元</option>
+						</select>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>节假日行驶区域扩展特约</legend>
+						<label for="insure_GP00000000_C7">投保</label>
+						<input name="insure_GP00000000_C7" id="insure_GP00000000_C7" type="checkbox">
+						<label for="insure_GP00000000_C7_flagM">不计免赔</label>
+						<input name="insure_GP00000000_C7_flagM" id="insure_GP00000000_C7_flagM" type="checkbox">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>车上货物责任险</legend>
+						<label for="insure_GP00000000_D2">投保</label>
+						<input name="insure_GP00000000_D2" id="insure_GP00000000_D2" type="checkbox">
+						<label for="insure_GP00000000_D2_flagM">不计免赔</label>
+						<input name="insure_GP00000000_D2_flagM" id="insure_GP00000000_D2_flagM" type="checkbox">
+						<input name="insure_GP00000000_D2_amount" id="insure_GP00000000_D2_amount" type="text" value="0" data-wrapper-class="controlgroup-textinput ui-btn">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>火灾、爆炸、自燃损失险</legend>
+						<label for="insure_GP00000000_E">投保</label>
+						<input name="insure_GP00000000_E" id="insure_GP00000000_E" type="checkbox">
+						<label for="insure_GP00000000_E_flagM">不计免赔</label>
+						<input name="insure_GP00000000_E_flagM" id="insure_GP00000000_E_flagM" type="checkbox">
+						<input name="insure_GP00000000_E_amount" id="insure_GP00000000_E_amount" type="text" value="0" data-wrapper-class="controlgroup-textinput ui-btn">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>玻璃单独破碎险</legend>
+						<label for="insure_GP00000000_F">投保</label>
+						<input name="insure_GP00000000_F" id="insure_GP00000000_F" type="checkbox">
+						<label for="insure_GP00000000_F_flagM">不计免赔</label>
+						<input name="insure_GP00000000_F_flagM" id="insure_GP00000000_F_flagM" type="checkbox">
+						<select name="insure_GP00000000_F_amount" id="insure_GP00000000_F_amount">
+							<option value="1" selected="selected">国产玻璃</option>
+							<option value="2">进口玻璃</option>
+							<option value="3">特种玻璃</option>
+							<option value="4">国产普通玻璃</option>
+							<option value="5">进口普通玻璃</option>
+							<option value="6">国产特种玻璃</option>
+							<option value="7">进口特种玻璃</option>
+						</select>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>起重、装卸、挖掘车辆损失扩展条款</legend>
+						<label for="insure_GP00000000_K1">投保</label>
+						<input name="insure_GP00000000_K1" id="insure_GP00000000_K1" type="checkbox">
+						<label for="insure_GP00000000_K1_flagM">不计免赔</label>
+						<input name="insure_GP00000000_K1_flagM" id="insure_GP00000000_K1_flagM" type="checkbox">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>特种车固定设备、仪器损坏扩展条款</legend>
+						<label for="insure_GP00000000_K2">投保</label>
+						<input name="insure_GP00000000_K2" id="insure_GP00000000_K2" type="checkbox">
+						<label for="insure_GP00000000_K2_flagM">不计免赔</label>
+						<input name="insure_GP00000000_K2_flagM" id="insure_GP00000000_K2_flagM" type="checkbox">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>车身划痕损失险</legend>
+						<label for="insure_GP00000000_L">投保</label>
+						<input name="insure_GP00000000_L" id="insure_GP00000000_L" type="checkbox">
+						<label for="insure_GP00000000_L_flagM">不计免赔</label>
+						<input name="insure_GP00000000_L_flagM" id="insure_GP00000000_L_flagM" type="checkbox">
+						<select name="insure_GP00000000_L_amount" id="insure_GP00000000_L_amount">
+							<option value="2000">2000</option>
+							<option value="5000">5000</option>
+							<option value="10000">1万元</option>
+							<option value="20000">2万元</option>
+						</select>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>不计免赔率特约</legend>
+						<label for="insure_GP00000000_M">投保</label>
+						<input name="insure_GP00000000_M" id="insure_GP00000000_M" type="checkbox">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>可选免赔额特约</legend>
+						<label for="insure_GP00000000_M1">投保</label>
+						<input name="insure_GP00000000_M1" id="insure_GP00000000_M1" type="checkbox">
+						<label for="insure_GP00000000_M1_flagM">不计免赔</label>
+						<input name="insure_GP00000000_M1_flagM" id="insure_GP00000000_M1_flagM" type="checkbox">
+						<select name="insure_GP00000000_M1_amount" id="insure_GP00000000_M1_amount">
+							<option value="300">300</option>
+							<option value="500">500</option>
+							<option value="1000">1000</option>
+							<option value="2000">2000</option>
+						</select>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>新车特约条款A</legend>
+						<label for="insure_GP00000000_NX">投保</label>
+						<input name="insure_GP00000000_NX" id="insure_GP00000000_NX" type="checkbox">
+						<label for="insure_GP00000000_NX_flagM">不计免赔</label>
+						<input name="insure_GP00000000_NX_flagM" id="insure_GP00000000_NX_flagM" type="checkbox">
+						<button>协定比例</button>
+						<select name="insure_GP00000000_NX_amount" id="insure_GP00000000_NX_amount">
+							<option value="50">50%</option>
+							<option value="60">60%</option>
+							<option value="70">70%</option>
+						</select>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>新车特约条款B</legend>
+						<label for="insure_GP00000000_NY">投保</label>
+						<input name="insure_GP00000000_NY" id="insure_GP00000000_NY" type="checkbox">
+						<label for="insure_GP00000000_NY_flagM">不计免赔</label>
+						<input name="insure_GP00000000_NY_flagM" id="insure_GP00000000_NY_flagM" type="checkbox">
+						<button>协定比例</button>
+						<select name="insure_GP00000000_NY_amount" id="insure_GP00000000_NY_amount">
+							<option value="50">50%</option>
+							<option value="60">60%</option>
+							<option value="70">70%</option>
+						</select>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>随车行李物品损失险</legend>
+						<label for="insure_GP00000000_NZ">投保</label>
+						<input name="insure_GP00000000_NZ" id="insure_GP00000000_NZ" type="checkbox">
+						<label for="insure_GP00000000_NZ_flagM">不计免赔</label>
+						<input name="insure_GP00000000_NZ_flagM" id="insure_GP00000000_NZ_flagM" type="checkbox">
+						<input name="insure_GP00000000_NZ_amount" id="insure_GP00000000_NZ_amount" type="text" value="0" data-wrapper-class="controlgroup-textinput ui-btn">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>交通事故精神损害赔偿责任险</legend>
+						<label for="insure_GP00000000_R">投保</label>
+						<input name="insure_GP00000000_R" id="insure_GP00000000_R" type="checkbox">
+						<label for="insure_GP00000000_R_flagM">不计免赔</label>
+						<input name="insure_GP00000000_R_flagM" id="insure_GP00000000_R_flagM" type="checkbox">
+						<input name="insure_GP00000000_R_amount" id="insure_GP00000000_R_amount" type="text" value="0" data-wrapper-class="controlgroup-textinput width-10 ui-btn">
+						<button>每人次限额</button>
+						<input name="insure_GP00000000_R_unitAmount" id="insure_GP00000000_R_unitAmount" type="text" value="0" data-wrapper-class="controlgroup-textinput width-10 ui-btn">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>机动车出境保险</legend>
+						<label for="insure_GP00000000_S">投保</label>
+						<input name="insure_GP00000000_S" id="insure_GP00000000_S" type="checkbox">
+						<label for="insure_GP00000000_S_flagM">不计免赔</label>
+						<input name="insure_GP00000000_S_flagM" id="insure_GP00000000_S_flagM" type="checkbox">
+						<button>半径</button>
+						<select name="insure_GP00000000_S_amount" id="insure_GP00000000_S_amount">
+							<option value="200">200</option>
+							<option value="500">500</option>
+							<option value="1000">1000</option>
+						</select>
+						<button>公里</button>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>停驶损失险</legend>
+						<label for="insure_GP00000000_T">投保</label>
+						<input name="insure_GP00000000_T" id="insure_GP00000000_T" type="checkbox">
+						<label for="insure_GP00000000_T_flagM">不计免赔</label>
+						<input name="insure_GP00000000_T_flagM" id="insure_GP00000000_T_flagM" type="checkbox">
+						<button>日赔偿金额</button>
+						<input name="insure_GP00000000_T_amount" id="insure_GP00000000_T_amount" type="text" data-wrapper-class="controlgroup-textinput width-10 ui-btn">
+						<button>x天数</button>
+						<input name="insure_GP00000000_T_quantity" id="insure_GP00000000_T_quantity" type="text" data-wrapper-class="controlgroup-textinput width-10 ui-btn">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>换件特约</legend>
+						<label for="insure_GP00000000_U">投保</label>
+						<input name="insure_GP00000000_U" id="insure_GP00000000_U" type="checkbox">
+						<label for="insure_GP00000000_U_flagM">不计免赔</label>
+						<input name="insure_GP00000000_U_flagM" id="insure_GP00000000_U_flagM" type="checkbox">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>油污污染责任险</legend>
+						<label for="insure_GP00000000_V1">投保</label>
+						<input name="insure_GP00000000_V1" id="insure_GP00000000_V1" type="checkbox">
+						<label for="insure_GP00000000_V1_flagM">不计免赔</label>
+						<input name="insure_GP00000000_V1_flagM" id="insure_GP00000000_V1_flagM" type="checkbox">
+						<select name="insure_GP00000000_V1_amount" id="insure_GP00000000_V1_amount">
+							<option value="50000">5万</option>
+							<option value="100000">10万</option>
+							<option value="200000">20万</option>
+							<option value="300000">30万</option>
+							<option value="500000">50万</option>
+						</select>
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>新增加设备损失险</legend>
+						<label for="insure_GP00000000_X">投保</label>
+						<input name="insure_GP00000000_X" id="insure_GP00000000_X" type="checkbox">
+						<label for="insure_GP00000000_X_flagM">不计免赔</label>
+						<input name="insure_GP00000000_X_flagM" id="insure_GP00000000_X_flagM" type="checkbox">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>发动机特别损失险</legend>
+						<label for="insure_GP00000000_X1">投保</label>
+						<input name="insure_GP00000000_X1" id="insure_GP00000000_X1" type="checkbox">
+						<label for="insure_GP00000000_X1_flagM">不计免赔</label>
+						<input name="insure_GP00000000_X1_flagM" id="insure_GP00000000_X1_flagM" type="checkbox">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>教练车特约</legend>
+						<label for="insure_GP00000000_Y">投保</label>
+						<input name="insure_GP00000000_Y" id="insure_GP00000000_Y" type="checkbox">
+						<label for="insure_GP00000000_Y_flagM">不计免赔</label>
+						<input name="insure_GP00000000_Y_flagM" id="insure_GP00000000_Y_flagM" type="checkbox">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>自燃损失险</legend>
+						<label for="insure_GP00000000_Z">投保</label>
+						<input name="insure_GP00000000_Z" id="insure_GP00000000_Z" type="checkbox">
+						<label for="insure_GP00000000_Z_flagM">不计免赔</label>
+						<input name="insure_GP00000000_Z_flagM" id="insure_GP00000000_Z_flagM" type="checkbox">
+						<input name="insure_GP00000000_Z_amount" id="insure_GP00000000_Z_amount" type="text" data-wrapper-class="controlgroup-textinput ui-btn">
+					</fieldset>
+				</div>
+				<button class="ui-btn-active">计算保费</button>
+			</div>
+		</div>
+	</div>
+</div>
