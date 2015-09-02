@@ -1,0 +1,3 @@
+AddDefaultCharset UTF-8
+AddType text/html .html
+DefaultType text/html
