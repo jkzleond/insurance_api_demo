@@ -7,3 +7,11 @@
 .width-10 {
 	width: 10%;
 }
+
+.step {
+	display: none;
+}
+
+.step.display {
+	display: block;
+}

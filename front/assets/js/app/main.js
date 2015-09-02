@@ -1,4 +1,4 @@
-var base_url = '/front'
+var base_url = './front'
 require.config({
 	baseUrl: base_url + '/assets/js',
 	paths: {

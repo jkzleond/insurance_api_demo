@@ -13,7 +13,7 @@ define([
 			this.listenTo(this.login_form_model, 'sync', this._onLoginFormModelSync);
 		},
 		events: {
-			'click .login-btn': '_onLoginBtnClick'
+			//'click .login-btn': '_onLoginBtnClick'
 		},
 		_onLoginBtnClick: function(event){
 			this._collectFormData();

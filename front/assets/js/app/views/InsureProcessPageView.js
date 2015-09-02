@@ -11,7 +11,13 @@ define([
 			this.insure_process_form_model = new InsureProcessFormModel();
 		},
 		events: {
-
+			'click .goto-btn': '_onGotoBtnClick'
+		},
+		_onGotoBtnClick: function(event){
+			var $goto_btn = $(event.target);
+			var goto_target = $goto_btn.attr('data-goto');
+			$('.step').hide();
+			$(goto_target).fadeIn();
 		}
 	});
 	return InsureProcessPageView;

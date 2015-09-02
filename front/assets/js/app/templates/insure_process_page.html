@@ -4,7 +4,7 @@
 	</div>
 	<div role="main" class="ui-content">
 		<div class="mod1">
-			<div class="insure-base-info-step1">
+			<div class="insure-base-info-step1 step display">
 				<h4 class="ui-bar ui-bar-a">基本信息</h4>
 				<div class="ui-field-contain">
 					<fieldset data-role="controlgroup" data-type="horizontal">
@@ -56,9 +56,9 @@
 					<label for="ctTemp.ctQuoteMain.ctCarinfos[0].licenseNo">号牌号码:</label>
 					<input name="ctTemp.ctQuoteMain.ctCarinfos[0].licenseNo" id="ctTemp.ctQuoteMain.ctCarinfos[0].licenseNo">
 				</div>
-				<button class="goto-base-info-step2-btn">下一步</button>
+				<button class="goto-btn ui-btn-active" data-goto=".insure-base-info-step2">下一步</button>
 			</div>
-			<div class="insure-base-info-step2">
+			<div class="insure-base-info-step2 step">
 				<h4 class="ui-bar ui-bar-a">保险生效日期</h4>
 				<div class="ui-field-contain">
 					<fieldset data-role="controlgroup" data-type="horizontal">
@@ -113,13 +113,13 @@
 				</div>
 				<div class="ui-field-contain">
 					<fieldset data-role="controlgroup" data-type="horizontal">
-						<button>上一步</button>
-						<button>下一步</button>
+						<button class="goto-btn" data-goto=".insure-base-info-step2">上一步</button>
+						<button class="goto-btn ui-btn-active" data-goto=".mod2">下一步</button>
 					</fieldset>
 				</div>
 			</div>
 		</div>
-		<div class="mod2">
+		<div class="mod2 step">
 			<h4 class="ui-bar ui-bar-a">基本信息</h4>
 			<div class="ui-field-contain">
 				<label for="insure_carLicenseNo">号牌号码:</label>
@@ -477,13 +477,13 @@
 			<div class="ui-field-contain">
 				<fieldset data-role="controlgroup" data-type="horizontal">
 					<legend></legend>
-					<button calss="goto-mod1">上一步</button>
-					<button class="goto-mod3 ui-btn-active">下一步</button>
+					<button class="goto-btn" data-goto=".insure-base-info-step1">上一步</button>
+					<button class="goto-btn ui-btn-active" data-goto=".mod3-step1">下一步</button>
 				</fieldset>
 			</div>
 		</div>
 		<div class="mod3">
-			<div class="mod3-step1">
+			<div class="mod3-step1 step">
 				<h4 class="ui-bar ui-bar-a">交强险信息</h4>
 				<div class="ui-field-contain">
 					<label for="insure_carshipLabel">车船税标志:</label>
@@ -818,12 +818,12 @@
 				<div class="ui-field-contain">
 					<fieldset data-role="controlgroup" data-type="horizontal">
 						<legend></legend>
-						<button class="goto-mod2">上一步</button>
-						<button class="goto-mod3-step2 ui-btn-active">下一步</button>
+						<button class="goto-btn" data-goto=".mod2">上一步</button>
+						<button class="goto-btn ui-btn-active" data-goto=".mod3-step2" >下一步</button>
 					</fieldset>
 				</div>
 			</div>
-			<div class="mod3-step2">
+			<div class="mod3-step2 step">
 				<h4 class="ui-bar ui-bar-a">投保商业险</h4>
 				<div class="ui-field-contain">
 					<fieldset data-role="controlgroup" data-type="horizontal">
@@ -1161,6 +1161,7 @@
 						<input name="insure_GP00000000_Z_amount" id="insure_GP00000000_Z_amount" type="text" data-wrapper-class="controlgroup-textinput ui-btn">
 					</fieldset>
 				</div>
+				<button class="goto-btn" data-goto=".mod3-step1">上一步</button>
 				<button class="ui-btn-active">计算保费</button>
 			</div>
 		</div>
