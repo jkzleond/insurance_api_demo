@@ -1,6 +1,6 @@
 var base_url = './'
 require.config({
-	baseUrl: base_url + '/assets/js',
+	baseUrl: base_url + 'assets/js',
 	paths: {
 		'jquery': 'jquery-2.1.4',
 		'jqm': 'jquery.mobile-1.4.5.min',
@@ -13,7 +13,7 @@ require.config({
 		'routers': 'app/routers'
 	}, 
 	urlArgs: 'bust=1',
-	waitSecond: 0,
+	waitSeconds: 0,
 	shim:{
 		'jqm':{
 			deps:['jquery']
