@@ -2,7 +2,7 @@ define([
 	'backbone'
 ], function(Backbone){
 	var LoginFormModel = Backbone.Model.extend({
-		url: './index.php?c=user&a=login',
+		url: '/front/login',
 		parse: function(resp, options){
 			if(options.collection) return resp;
 			return resp.row || {};

@@ -2,7 +2,7 @@
 class IndexController extends SF_BaseController
 {
 	
-	public function index()
+	public function indexAction()
 	{
 		/*$http_request = new HttpRequest();
 		$http_response = $http_request->get('www.sina.com');

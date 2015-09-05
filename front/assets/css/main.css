@@ -1,3 +1,16 @@
+/* toast */
+.cm-toast {
+    position: fixed;
+    top:inherit;
+    bottom: 45px;
+    padding: 10px;
+    border-radius: 0.5em;
+    font-size: 0.75em;
+    text-align: center;
+    display: block;
+    z-index: 2000;
+}
+
 .controlgroup-textinput {
 	padding-top:.22em;
 	padding-bottom:.22em;

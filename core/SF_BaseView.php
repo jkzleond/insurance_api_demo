@@ -2,7 +2,7 @@
 class SF_BaseView extends SF_AbstractInjectable
 {
 	protected $_vars = array();
-	protected $_disabled = false;
+	protected $_enabled = true;
 	protected $_renderView = null; //准备渲染的视同名称(控制器名称与Action名称的组合)
 	protected $_engine = null; //模板引擎
 	protected $_dir = null;
@@ -36,7 +36,24 @@ class SF_BaseView extends SF_AbstractInjectable
 	 */
 	public function disable()
 	{
-		$this->_disabled = true;
+		$this->_enabled = false;
+	}
+
+	/**
+	 * 启用视图
+	 */
+	public function enable()
+	{
+		$this->_enabled = true;
+	}
+
+	/**
+	 * 视图是否启用
+	 * @return boolean
+	 */
+	public function isEnabled()
+	{
+		return $this->_enabled;
 	}
 
 	/**

@@ -44,7 +44,7 @@ class HttpResponse
         if(is_null($this->_content))
         {
             preg_match('/(?:\r\n){2,}(.*)/is', $this->_raw_content, $mc);
-            $this->_content = trim($mc[1]);
+            $this->_content = isset($mc[1]) ? trim($mc[1]) : '';
         }
         return $this->_content;
     }
@@ -57,12 +57,12 @@ class HttpResponse
             
             preg_match('/HTTP\/\d+\.\d+ \d+ .*\r\n(.*)(?:\r\n){2,}/Uis', $this->_raw_content, $m);    
             
-            $header_str = $m[1];
+            $header_str = isset($m[1]) ? $m[1] : null;
             
             if($header_str)
             {    
-                preg_match_all('/.*: .*\r\n/Uis', $header_str, $mh);
-                foreach($mh[0] as $header)
+                preg_match_all('/(.*: .*)\r\n/Uis', $header_str, $mh);
+                foreach($mh[1] as $header)
                 {
                     $header_arr = explode(': ', $header);
                           
@@ -85,5 +85,10 @@ class HttpResponse
             }
         }
         return $this->_headers;
+    }
+
+    public function getRawContent()
+    {
+        return $this->_raw_content;
     }
 }

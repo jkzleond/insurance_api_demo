@@ -5,7 +5,8 @@ class SF_BaseDispatcher extends SF_AbstractInjectable
 	protected $_controller_name = null;
 	protected $_action_name = null;
 	protected $_controller_suffix = 'Controller';
-	protected $_action_suffix = '';
+	protected $_action_suffix = 'Action';
+	protected $_parameters = null;
 
 	/**
 	 * 初始化方法,必须实现的父类抽象方法
@@ -71,6 +72,15 @@ class SF_BaseDispatcher extends SF_AbstractInjectable
 	}
 
 	/**
+	 * 设置Action参数
+	 * @param array|null $parameters
+	 */
+	public function setParameters($parameters)
+	{
+		$this->_parameters = $parameters;
+	}
+
+	/**
 	 * 执行控制器的Action
 	 * @return
 	 */
@@ -82,14 +92,42 @@ class SF_BaseDispatcher extends SF_AbstractInjectable
 
 		$controller = new $controller_class_name();
 
+		$controller_ref_class = new ReflectionClass($controller);
+
 		$this->event_manager->bind('dispatch:afterControllerCreate', $controller); //绑定当前控制器实例为事件处理器
 
 		$this->event_manager->trigger($this, 'dispatch:afterControllerCreate'); //创建触发控制器创建后事件
 
 		$action = $this->_action_name.$this->_action_suffix;
 
+		if( !$controller_ref_class->hasMethod($action) )
+		{
+			throw new Exception('controller '.$this->_controller_name.' has not action '.$this->_action_name);
+		}
+		
+		$action_method_ref_class = $controller_ref_class->getMethod($action);
+		$action_parameters = $action_method_ref_class->getParameters();
+		$action_args = array();
 
-		if( !method_exists($controller, $action) ) throw new Exception('controller '.$this->_controller_name.' has not action '.$this->_action_name);
-		call_user_func(array($controller, $action));
+		foreach($action_parameters as $action_parameter_rel_class)
+		{
+			$param_name = $action_parameter_rel_class->getName();
+			$param_value = null;
+			if( isset($this->_parameters[$param_name]) )
+			{
+				$param_value = $this->_parameters[$param_name];
+			}
+			elseif($action_parameter_rel_class->isOptional())
+			{
+				$param_value = $action_parameter_rel_class->getDefaultValue();
+			}
+			else
+			{
+				throw new Exception('Controller '.$controller_class_name.' Action '.$action.' need parameter '.$param_name);
+			}
+			$action_args[$param_name] = $param_value;
+		}
+
+		$action_method_ref_class->invokeArgs($controller, $action_args);
 	}
 }

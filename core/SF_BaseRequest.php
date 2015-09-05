@@ -61,4 +61,24 @@ class SF_BaseRequest extends SF_AbstractInjectable
 	{
 
 	}
+
+	/**
+	 * 获取原始请求体
+	 * @return string
+	 */
+	public function getRawBody()
+	{
+		return file_get_contents('php://input');
+	}
+
+	/**
+	 * 获取原始请求体的json(json_decode后)
+	 * @param  bool $is_assoc 是否解码成关联数组
+	 * @return object|array
+	 */
+	public function getJsonRawBody($is_assoc=false)
+	{
+		$json = file_get_contents('php://input');
+		return json_decode($json, $is_assoc);
+	}
 }

@@ -5,5 +5,6 @@ include '../core/core.php';
 include 'config/config.php';
 include 'config/loader.php';
 include 'config/services.php';
+include 'config/routes.php';
 $app = new SF_BaseApp($config);
 $app->start();

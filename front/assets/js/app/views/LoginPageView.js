@@ -2,7 +2,8 @@ define([
 	'jquery',
 	'backbone',
 	'models/LoginFormModel',
-	'text!templates/login_page.html'
+	'text!templates/login_page.html',
+	'jqm_widget_ext'
 ], function($, Backbone, LoginFormModel, PageTpl){
 	$(PageTpl).appendTo('body');
 	var LoginPageView = Backbone.View.extend({
@@ -13,7 +14,7 @@ define([
 			this.listenTo(this.login_form_model, 'sync', this._onLoginFormModelSync);
 		},
 		events: {
-			//'click .login-btn': '_onLoginBtnClick'
+			'click .login-btn': '_onLoginBtnClick'
 		},
 		_onLoginBtnClick: function(event){
 			this._collectFormData();
@@ -24,7 +25,9 @@ define([
 			return false;
 		},
 		_onFormInvalid: function(model, err){
-			console.log(err);
+			$.cm.toast({
+				msg: err
+			});
 		},
 		_onLoginFormModelSync: function(model, resp, options){
 

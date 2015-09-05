@@ -9,6 +9,17 @@ define([
 			this.login_page_view = new LoginPageView();
 			this.insure_process_page_view = new InsureProcessPageView();
 		},
+		execute: function(callback, args, name){
+			if(!$.G.user && name !== 'login')
+			{
+				this.navigate('login', {trigger: true});
+				return false;
+			}
+			else if(callback)
+			{
+				callback.apply(this, args);
+			}
+		},
 		routes: {
 			'(login)': 'login',
 			'insure': 'insure'
