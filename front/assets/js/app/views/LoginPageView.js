@@ -30,7 +30,8 @@ define([
 			});
 		},
 		_onLoginFormModelSync: function(model, resp, options){
-
+			if(resp.success) $.G.user = resp.row;
+			this.trigger('uri', this, 'insure');
 		},
 		_collectFormData: function()
 		{

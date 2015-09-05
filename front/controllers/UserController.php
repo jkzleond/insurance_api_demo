@@ -63,7 +63,8 @@ class UserController extends SF_BaseController
 			$_SESSION['emu_cookies'] = $final_http_response->cookies;
 
 			echo json_encode(array(
-				'success' => true
+				'success' => true,
+				'row' => $_SESSION
 			));
 		}
 		else
@@ -79,7 +80,7 @@ class UserController extends SF_BaseController
 	public function getUserStateAction()
 	{
 		$this->view->disable();
-		
+
 		$return_data = array();
 
 		if( isset($_SESSION['emu_cookies']) )

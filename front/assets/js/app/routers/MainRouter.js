@@ -8,6 +8,7 @@ define([
 		initialize: function(){
 			this.login_page_view = new LoginPageView();
 			this.insure_process_page_view = new InsureProcessPageView();
+			this.listenTo(this.login_page_view, 'uri', this._onViewRequestURI);
 		},
 		execute: function(callback, args, name){
 			if(!$.G.user && name !== 'login')
@@ -20,9 +21,12 @@ define([
 				callback.apply(this, args);
 			}
 		},
+		_onViewRequestURI: function(view, uri){
+			this.navigate(uri, {trigger: true});
+		},
 		routes: {
-			'(login)': 'login',
-			'insure': 'insure'
+			'login': 'login',
+			'(insure)': 'insure'
 		},
 		login: function(){
 			$(':mobile-pagecontainer').pagecontainer('change', '#insurance_login_page');
