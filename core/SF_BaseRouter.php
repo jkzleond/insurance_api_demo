@@ -37,8 +37,8 @@ FUNC;
 			{
 				foreach($this->_routes[$request_method] as $pattern => $paths)
 				{
-					$reg = '@^'.preg_replace_callback('/\{(.*:)?(.*)\}/', create_function('$matches', $lambda), $pattern).'$@'; // 使用create_function兼容5.2
-
+					$reg = '@^'.preg_replace_callback('/\{(.*:)?([^:]*)\}/Uis', create_function('$matches', $lambda), $pattern).'$@'; // 使用create_function兼容5.2
+					
 					if( preg_match($reg, $url, $matches) )
 					{
 						if(is_string($paths))

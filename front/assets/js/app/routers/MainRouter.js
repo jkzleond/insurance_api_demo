@@ -10,17 +10,17 @@ define([
 			this.insure_process_page_view = new InsureProcessPageView();
 			this.listenTo(this.login_page_view, 'uri', this._onViewRequestURI);
 		},
-		execute: function(callback, args, name){
-			if(!$.G.user && name !== 'login')
-			{
-				this.navigate('login', {trigger: true});
-				return false;
-			}
-			else if(callback)
-			{
-				callback.apply(this, args);
-			}
-		},
+		// execute: function(callback, args, name){
+		// 	if(!$.G.user && name !== 'login')
+		// 	{
+		// 		this.navigate('login', {trigger: true});
+		// 		return false;
+		// 	}
+		// 	else if(callback)
+		// 	{
+		// 		callback.apply(this, args);
+		// 	}
+		// },
 		_onViewRequestURI: function(view, uri){
 			this.navigate(uri, {trigger: true});
 		},
