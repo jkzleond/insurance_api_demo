@@ -113,7 +113,7 @@
 				</div>
 				<div class="ui-field-contain">
 					<fieldset data-role="controlgroup" data-type="horizontal">
-						<button class="goto-btn" data-goto=".insure-base-info-step2">上一步</button>
+						<button class="goto-btn" data-goto=".insure-base-info-step1">上一步</button>
 						<button class="goto-btn ui-btn-active" data-goto=".mod2">下一步</button>
 					</fieldset>
 				</div>
@@ -477,7 +477,7 @@
 			<div class="ui-field-contain">
 				<fieldset data-role="controlgroup" data-type="horizontal">
 					<legend></legend>
-					<button class="goto-btn" data-goto=".insure-base-info-step1">上一步</button>
+					<button class="goto-btn" data-goto=".insure-base-info-step2">上一步</button>
 					<button class="goto-btn ui-btn-active" data-goto=".mod3-step1">下一步</button>
 				</fieldset>
 			</div>
@@ -1162,7 +1162,13 @@
 					</fieldset>
 				</div>
 				<button class="goto-btn" data-goto=".mod3-step1">上一步</button>
-				<button class="ui-btn-active">计算保费</button>
+				<button class="ui-btn-active goto-btn" data-goto=".insure-policy">下单</button>
+			</div>
+			<div class="step insure-policy">
+				<div style="text-align: center">
+					<h3>下单成功</h3>
+				</div>
+				<button class="goto-btn" data-goto=".insure-base-info-step1">继续下单</button>
 			</div>
 		</div>
 	</div>
